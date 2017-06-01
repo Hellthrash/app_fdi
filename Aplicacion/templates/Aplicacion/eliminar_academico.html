@@ -1,0 +1,21 @@
+<h1>Confirmación eliminación académico</h1>
+{% if form.subject.errors %}
+<ol>
+	{% for error in form.subject.errors %}
+	<li><strong>{{ error|escape }}</strong></li>
+	{% endfor %}
+</ol>
+{% endif %}
+<form method="POST">
+	{% csrf_token %}
+
+	
+	<p>Nombre: {{var.nombre}}</p>
+	<p>Apellido: {{var.apellido}}</p>
+	<p>Rut: {{var.rut}}</p>
+
+	<input class="btn btn-primary" type="submit" value="Confirm"/>
+    <button onclick="window.history.back();" class="btn btn-default" type="button">Cancel</button>
+</form>
+</body>
+</html>

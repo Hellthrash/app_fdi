@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nuevo académico</title>
+</head>
+<body>
+<h1>Formulario nuevo académico</h1>
+{% if form.subject.errors %}
+<ol>
+	{% for error in form.subject.errors %}
+	<li><strong>{{ error|escape }}</strong></li>
+	{% endfor %}
+</ol>
+{% endif %}
+<form method="POST">
+	{% csrf_token %}
+	
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" placeholder="Ej: Juan">
+
+	<label for="apellido">Apellido</label>
+	<input type="text" name="apellido" placeholder="Ej: Pérez">
+
+	<label for="rut">Rut</label>
+	<input type="text" name="rut" placeholder="Ej: Juan">
+
+	<button>Registrar</button>
+</form>
+
+
+</body>
+</html>

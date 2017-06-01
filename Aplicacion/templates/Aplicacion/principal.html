@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<title>APP</title>
+</head>
+<body>
+<h1>Academicos!</h1>
+<table style='width:100%'>
+<thead>
+	<th align="left">Id</th>
+	<th align="left">Rut</th>
+	<th align="left">Nombre</th>
+	<th align="left">Apellido</th>
+</thead>
+<tbody>
+	{%for academico in var%}
+	<tr>
+		<td>{{academico.id}}</td><td>{{academico.rut}}</td><td>{{academico.nombre}}</td><td>{{academico.apellido}}</td><td><a href="{% url 'editar_academico' academico.id%}">Editar</a></td><td><a href="{% url 'eliminar_academico' academico.id%}">Borrar</a></td>
+	</tr>
+	{% endfor %}
+</tbody>
+</table>
+<a href="{% url 'nuevo_academico' %}">Nuevo</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<h1>Formulario editar académico</h1>
+{% if form.subject.errors %}
+<ol>
+	{% for error in form.subject.errors %}
+	<li><strong>{{ error|escape }}</strong></li>
+	{% endfor %}
+</ol>
+{% endif %}
+<form method="POST">
+	{% csrf_token %}
+
+	
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" value="{{var.nombre}}">
+
+	<label for="apellido">Apellido</label>
+	<input type="text" name="apellido" value="{{var.apellido}}">
+
+	<label for="rut">Rut</label>
+	<input type="text" name="rut" value="{{var.rut}}">
+
+	<button>Editar</button>
+</form>
+</body>
+</html>
