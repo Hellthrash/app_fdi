@@ -80,7 +80,7 @@ DATABASES = {
         'HOST': 'localhost',
         'NAME': 'app_fundamentos',
         'USER': 'root',
-        'PASSWORD': 'aNNIKILATOR1',
+        'PASSWORD': 'root',
     }
 }
 
